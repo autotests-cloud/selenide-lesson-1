@@ -1,6 +1,7 @@
 package guru.qa.selenide;
 
 import com.codeborne.selenide.*;
+import org.openqa.selenium.Keys;
 
 import java.io.*;
 import java.time.Duration;
@@ -72,6 +73,11 @@ public class Snippets {
      $("").setValue("text");
      $("").append("text");
      $("").clear();
+     //
+     $("").sendKeys("c"); // hotkey c on element
+     actions().sendKeys("c").perform(); //hotkey c on whole application
+     actions().sendKeys(Keys.chord(Keys.CONTROL,"f")).perform(); // Ctrl + F
+     $("html").sendKeys(Keys.chord(Keys.CONTROL,"f"));
 
      $("").pressEnter();
      $("").pressEscape();
